@@ -3,11 +3,10 @@
 [![Linux Status](https://img.shields.io/travis/gdamore/encoding.svg?label=linux)](https://travis-ci.org/gdamore/encoding)
 [![Windows Status](https://img.shields.io/appveyor/ci/gdamore/encoding.svg?label=windows)](https://ci.appveyor.com/project/gdamore/encoding)
 [![Apache License](https://img.shields.io/badge/license-APACHE2-blue.svg)](https://github.com/gdamore/encoding/blob/master/LICENSE)
-[![Gitter](https://img.shields.io/badge/gitter-join-brightgreen.svg)](https://gitter.im/gdamore/encoding)
 [![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](https://godoc.org/github.com/gdamore/encoding)
 
 Package encoding provides a number of encodings that are missing from the
-standard Go x/text/encoding package.
+standard Go [encoding]("https://godoc.org/golang.org/x/text/encoding") package.
 
 We hope that we can contribute these to the standard Go library someday.  It
 turns out that some of these are useful for dealing with I/O streams coming
