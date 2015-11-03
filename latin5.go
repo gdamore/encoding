@@ -29,7 +29,7 @@ func init() {
 		0xF0: 'ğ',
 		0xFD: 'ı',
 		0xFE: 'ş',
-		}}
+	}}
 	cm.Init()
 	ISO8859_9 = cm
 }

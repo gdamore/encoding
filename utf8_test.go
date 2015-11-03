@@ -17,7 +17,7 @@ package encoding
 import (
 	"testing"
 
-        . "github.com/smartystreets/goconvey/convey"
+	. "github.com/smartystreets/goconvey/convey"
 )
 
 func TestUTF8(t *testing.T) {

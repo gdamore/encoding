@@ -4,6 +4,7 @@
 [![Windows Status](https://img.shields.io/appveyor/ci/gdamore/encoding.svg?label=windows)](https://ci.appveyor.com/project/gdamore/encoding)
 [![Apache License](https://img.shields.io/badge/license-APACHE2-blue.svg)](https://github.com/gdamore/encoding/blob/master/LICENSE)
 [![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](https://godoc.org/github.com/gdamore/encoding)
+[![Go Report Card](http://goreportcard.com/badge/gdamore/encoding)](http://goreportcard.com/report/gdamore/encoding)
 
 Package encoding provides a number of encodings that are missing from the
 standard Go [encoding]("https://godoc.org/golang.org/x/text/encoding") package.

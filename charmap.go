@@ -54,9 +54,9 @@ const (
 //
 type Charmap struct {
 	transform.NopResetter
-	bytes   map[rune]byte
-	runes   [256][]byte
-	once	sync.Once
+	bytes map[rune]byte
+	runes [256][]byte
+	once  sync.Once
 
 	// The map between bytes and runes.  To indicate that a specific
 	// byte value is invalid for a charcter set, use the rune
@@ -70,7 +70,7 @@ type Charmap struct {
 	// mappings), then the character set is assumed to be an ASCII
 	// superset, and certain assumptions and optimizations become
 	// available for ASCII bytes.
-	Map     map[byte]rune
+	Map map[byte]rune
 
 	// The ReplacementChar is the byte value to use for substitution.
 	// It should normally be ASCIISub for ASCII encodings.  This may be
@@ -122,7 +122,7 @@ func (c *Charmap) initialize() {
 	}
 }
 
-// NewEncoder returns a Transformer the converts from the 8-bit
+// NewDecoder returns a Transformer the converts from the 8-bit
 // character set to UTF-8.  Unknown mappings, if any, are mapped
 // to '\uFFFD'.
 func (c *Charmap) NewDecoder() transform.Transformer {
@@ -130,7 +130,7 @@ func (c *Charmap) NewDecoder() transform.Transformer {
 	return &cmapDecoder{runes: c.runes}
 }
 
-// NewDecoder returns a Transformer that converts from UTF8 to the
+// NewEncoder returns a Transformer that converts from UTF8 to the
 // 8-bit character set.  Unknown mappings are mapped to 0x1A.
 func (c *Charmap) NewEncoder() transform.Transformer {
 	c.Init()

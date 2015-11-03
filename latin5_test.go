@@ -17,7 +17,7 @@ package encoding
 import (
 	"testing"
 
-        . "github.com/smartystreets/goconvey/convey"
+	. "github.com/smartystreets/goconvey/convey"
 )
 
 func TestISO8859_9(t *testing.T) {

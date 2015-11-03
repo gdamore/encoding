@@ -16,10 +16,10 @@ package encoding
 
 import (
 	"bytes"
-	"unicode/utf8"
 	"golang.org/x/text/encoding"
+	"unicode/utf8"
 
-        . "github.com/smartystreets/goconvey/convey"
+	. "github.com/smartystreets/goconvey/convey"
 )
 
 func verifyMap(enc encoding.Encoding, b byte, r rune) {

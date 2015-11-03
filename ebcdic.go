@@ -25,7 +25,7 @@ var EBCDIC encoding.Encoding
 func init() {
 	cm := &Charmap{
 		ReplacementChar: '\x3f',
-		Map:		 map[byte]rune{
+		Map: map[byte]rune{
 			// 0x00-0x03 match
 			0x04: RuneError,
 			0x05: '\t',
@@ -36,10 +36,10 @@ func init() {
 			0x0a: RuneError,
 			// 0x0b-0x13 match
 			0x14: RuneError,
-			0x15: '\x85',		// Not in any ISO code
+			0x15: '\x85', // Not in any ISO code
 			0x16: '\x08',
 			0x17: RuneError,
-			// 0x18-0x19 match	
+			// 0x18-0x19 match
 			0x1a: RuneError,
 			0x1b: RuneError,
 			// 0x1c-0x1f match
@@ -74,7 +74,7 @@ func init() {
 			0x3c: '\x14',
 			0x3d: '\x15',
 			0x3e: RuneError,
-			0x3f: '\x1a',	// also replacement char
+			0x3f: '\x1a', // also replacement char
 			0x40: ' ',
 			0x41: '\xa0',
 			0x42: RuneError,
@@ -213,7 +213,7 @@ func init() {
 			0xc7: 'G',
 			0xc8: 'H',
 			0xc9: 'I',
-			0xca: '\xad',	// NB: soft hyphen
+			0xca: '\xad', // NB: soft hyphen
 			0xcb: RuneError,
 			0xcc: RuneError,
 			0xcd: RuneError,
@@ -236,7 +236,7 @@ func init() {
 			0xde: RuneError,
 			0xdf: RuneError,
 			0xe0: '\\',
-			0xe1: '\u2007',	// Non-breaking space
+			0xe1: '\u2007', // Non-breaking space
 			0xe2: 'S',
 			0xe3: 'T',
 			0xe4: 'U',
