@@ -16,7 +16,6 @@ package encoding
 
 import (
 	"golang.org/x/text/encoding"
-	"golang.org/x/text/transform"
 )
 
 type validUtf8 struct{}
@@ -27,10 +26,10 @@ type validUtf8 struct{}
 // passes every byte, blithely.
 var UTF8 encoding.Encoding = validUtf8{}
 
-func (validUtf8) NewDecoder() transform.Transformer {
-	return encoding.UTF8Validator
+func (validUtf8) NewDecoder() *encoding.Decoder {
+	return &encoding.Decoder{Transformer: encoding.UTF8Validator}
 }
 
-func (validUtf8) NewEncoder() transform.Transformer {
-	return encoding.UTF8Validator
+func (validUtf8) NewEncoder() *encoding.Encoder {
+	return &encoding.Encoder{Transformer: encoding.UTF8Validator}
 }

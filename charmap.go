@@ -19,6 +19,7 @@ import (
 	"unicode/utf8"
 
 	"golang.org/x/text/transform"
+	"golang.org/x/text/encoding"
 )
 
 const (
@@ -122,19 +123,20 @@ func (c *Charmap) initialize() {
 	}
 }
 
-// NewDecoder returns a Transformer the converts from the 8-bit
+// NewDecoder returns a Decoder the converts from the 8-bit
 // character set to UTF-8.  Unknown mappings, if any, are mapped
 // to '\uFFFD'.
-func (c *Charmap) NewDecoder() transform.Transformer {
+func (c *Charmap) NewDecoder() *encoding.Decoder {
 	c.Init()
-	return &cmapDecoder{runes: c.runes}
+	return &encoding.Decoder{Transformer: &cmapDecoder{runes: c.runes}}
 }
 
 // NewEncoder returns a Transformer that converts from UTF8 to the
 // 8-bit character set.  Unknown mappings are mapped to 0x1A.
-func (c *Charmap) NewEncoder() transform.Transformer {
+func (c *Charmap) NewEncoder() *encoding.Encoder {
 	c.Init()
-	return &cmapEncoder{bytes: c.bytes, replace: c.ReplacementChar}
+	return &encoding.Encoder{Transformer:
+	    &cmapEncoder{bytes: c.bytes, replace: c.ReplacementChar}}
 }
 
 func (d *cmapDecoder) Transform(dst, src []byte, atEOF bool) (int, int, error) {
